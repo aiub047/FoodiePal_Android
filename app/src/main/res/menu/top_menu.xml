@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/mnRecipes"
+        android:title="@string/lblRecipes"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/mnMenuPlanner"
+        android:title="@string/lblMenuPlanner"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/mnBlog"
+        android:title="@string/lblBlog"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/mnContact"
+        android:title="@string/lblContact"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/mnAboutMe"
+        android:title="@string/lblAboutMe"
+        app:showAsAction="ifRoom" />
+</menu>
