@@ -30,7 +30,7 @@ class RecipesFragment : Fragment() {
         recyclerView.adapter = adapter
 
         binding = FragmentRecipesBinding.bind(view);
-        binding.tvTest.text = "This is my text view"
+        //binding.tvRecipeHeader.text = "This is my text view"
         binding.recyclerView.adapter = adapter
 
         return view

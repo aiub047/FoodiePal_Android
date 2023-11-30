@@ -2,6 +2,7 @@ package com.mak.foodiepal
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 
 import androidx.viewpager2.widget.ViewPager2
@@ -15,12 +16,14 @@ class HolderActivity : AppCompatActivity() {
 
     //lateinit var fmanager: FragmentManager
     //lateinit var tx: FragmentTransaction
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_holder)
 
         val vpHolder = findViewById<ViewPager2>(R.id.vpHolder)
         val tlTopMenu = findViewById<TabLayout>(R.id.tlTopMenu)
+
 
         val vpAdapter = ViewPagerAdapter(supportFragmentManager, lifecycle)
         vpHolder.adapter = vpAdapter
@@ -57,9 +60,12 @@ class HolderActivity : AppCompatActivity() {
         val fab = findViewById<FloatingActionButton>(R.id.fab)
         fab.setOnClickListener {
             //showToastMessage("Working");
-                view ->
-            Snackbar.make(view, "Button clicked", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+            /*view ->
+        Snackbar.make(view, "Button clicked", Snackbar.LENGTH_LONG)
+            .setAction("Action", null).show()*/
+
+            val inputFormFragment = FloatingInputFormFragment()
+            inputFormFragment.show(supportFragmentManager, "FloatingInputFormFragment")
         }
 
 

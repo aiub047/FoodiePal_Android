@@ -1,6 +1,7 @@
 package com.mak.foodiepal
 
 import android.content.Context
+import android.graphics.Typeface
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,10 +13,12 @@ class RecipeAdapter(private val context: Context, private val recipeList: List<R
     inner class RecipeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var tvRecipeName: TextView
         var tvItemInfo: TextView
+        var tvItemDesc: TextView
 
         init {
             tvRecipeName = itemView.findViewById(R.id.tvRecipeName)
             tvItemInfo = itemView.findViewById(R.id.tvItemInfo)
+            tvItemDesc = itemView.findViewById(R.id.tvItemDesc)
         }
     }
 
@@ -34,7 +37,9 @@ class RecipeAdapter(private val context: Context, private val recipeList: List<R
     override fun onBindViewHolder(holder: RecipeAdapter.RecipeViewHolder, position: Int) {
         val currentItem = recipeList[position]
         holder.tvRecipeName.text = currentItem.recipeName
-        holder.tvItemInfo.text = currentItem.recipeName
+        holder.tvRecipeName.setTypeface(null, Typeface.BOLD)
+        holder.tvItemInfo.text = currentItem.ingradiants.joinToString("\n")
+        holder.tvItemDesc.text = currentItem.instrcution
     }
 
     override fun getItemCount(): Int {

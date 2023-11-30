@@ -89,4 +89,8 @@
     <string name="lblContact">Contact</string>
     <string name="lblAboutMe">About Me</string>
     <string name="title_activity_base">BaseActivity</string>
+    <string name="lblRecipeHeader">Available Recipes</string>
+    <string name="lblAddNewRecipe">Add new recipe</string>
+    <string name="lblAdd">Add</string>
+    <string name="lblCancel">Cancel</string>
 </resources>
