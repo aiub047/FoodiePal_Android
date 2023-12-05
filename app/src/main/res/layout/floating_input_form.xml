@@ -25,11 +25,12 @@
     <EditText
         android:id="@+id/edIngredients"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/textbox_style"
         android:gravity="top|start"
         android:hint="Email"
+        android:maxLines="4"
         android:inputType="textMultiLine" />
 
     <EditText
