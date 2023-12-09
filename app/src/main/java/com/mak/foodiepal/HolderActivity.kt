@@ -3,12 +3,10 @@ package com.mak.foodiepal
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
-import androidx.lifecycle.ViewModelProvider
+import androidx.activity.viewModels
 
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.mak.foodiepal.databinding.ActivityHolderBinding
@@ -16,17 +14,18 @@ import com.mak.foodiepal.viewmodels.RecipeViewModel
 
 class HolderActivity : AppCompatActivity(), FloatingInputFormFragment.OnItemAddedListener {
 
-    private lateinit var reciepeViewModel: RecipeViewModel
+    private lateinit var binding: ActivityHolderBinding
 
+    private val recipeViewModel: RecipeViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_holder)
-        reciepeViewModel = ViewModelProvider(this).get(RecipeViewModel::class.java)
+        binding = ActivityHolderBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         var selectedPosition = 0
 
-        val vpHolder = findViewById<ViewPager2>(R.id.vpHolder)
-        val tlTopMenu = findViewById<TabLayout>(R.id.tlTopMenu)
+        val vpHolder = binding.vpHolder
+        val tlTopMenu = binding.tlTopMenu
 
         val vpAdapter = ViewPagerAdapter(supportFragmentManager, lifecycle)
         vpHolder.adapter = vpAdapter
@@ -71,7 +70,7 @@ class HolderActivity : AppCompatActivity(), FloatingInputFormFragment.OnItemAdde
                 }
 
                 1 -> {
-
+                    showRecipePlannerForm()
                 }
             }
         }
@@ -89,16 +88,19 @@ class HolderActivity : AppCompatActivity(), FloatingInputFormFragment.OnItemAdde
     }
 
     private fun showRecipesForm() {
-
         val inputFormFragment = FloatingInputFormFragment()
         inputFormFragment.setOnItemAddedListener(this)
-
         inputFormFragment.show(supportFragmentManager, "FloatingInputFormFragment")
     }
 
+    private fun showRecipePlannerForm() {
+        val inputFormFragment = FloatingRecipePlannerFragment()
+        //inputFormFragment.setOnItemAddedListener(this)
+        inputFormFragment.show(supportFragmentManager, "FloatingRecipePlannerFragment")
+    }
+
     override fun onItemAdded(item: Recipe) {
-        Log.e("AIUB", "${item.recipeName} STEP 1")
-        reciepeViewModel.setRecipe(item)
-        reciepeViewModel.setTitle("Hilaly")
+        //Set data in RecipeViewModel so that observers can get the data
+        recipeViewModel.setRecipe(item)
     }
 }

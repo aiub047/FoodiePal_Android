@@ -70,7 +70,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
                 android:autofillHints="Enter email"
-                android:background="@drawable/textbox_style"
+                android:background="@drawable/text_box_style"
                 android:hint="@string/lblSampleEmail"
                 android:inputType="textEmailAddress"
                 android:text="@string/lblSampleEmail" />
@@ -91,7 +91,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
                 android:autofillHints="Enter password"
-                android:background="@drawable/textbox_style"
+                android:background="@drawable/text_box_style"
                 android:hint="@string/lblSamplePassword"
                 android:inputType="textPassword"
                 android:text="@string/lblSamplePassword" />
