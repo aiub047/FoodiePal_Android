@@ -75,6 +75,23 @@ class HolderActivity : AppCompatActivity(), FloatingInputFormFragment.OnItemAdde
             }
         }
 
+        binding.menuBottomNavigation.setOnNavigationItemReselectedListener {
+            when (it.itemId) {
+                R.id.mnRecipes -> {
+                    vpHolder.currentItem = 0
+                }
+
+                R.id.mnMenuPlanner -> {
+                    vpHolder.currentItem = 1
+                }
+
+                R.id.mnBlog -> {
+                    vpHolder.currentItem = 2
+                }
+
+                else -> vpHolder.currentItem = 0
+            }
+        }
 
         vpHolder.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
