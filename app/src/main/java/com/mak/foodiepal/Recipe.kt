@@ -4,10 +4,10 @@ import java.io.Serializable
 
 class Recipe(
     val recipeName: String?,
-    val ingradiants: List<String?>,
-    val instrcution: String?
+    val ingredients: List<String?>,
+    val instruction: String?
 ) : Serializable {
     override fun toString(): String {
-        return "Recipe(recipeName=$recipeName, ingradiants=$ingradiants, instrcution=$instrcution)"
+        return "Recipe(recipeName=$recipeName, ingredients=$ingredients, instruction=$instruction)"
     }
 }

@@ -93,4 +93,13 @@
     <string name="lblAddNewRecipe">Add new recipe</string>
     <string name="lblAdd">Add</string>
     <string name="lblCancel">Cancel</string>
+    <string name="lblRecipeName">Recipe Name</string>
+    <string name="lblIngredients">Ingredients</string>
+    <string name="lblInstructions">Instructions</string>
+    <string name="lblMyName">Mohammad Aiub Khan</string>
+    <string name="lblEmail">makhan@miu.edu</string>
+    <string name="lblPhoneNumber">+1 (641) 123–4567</string>
+    <string name="lblRecipePlannerHeading">Plan Recipe by week</string>
+    <string name="lblTypeRecipeName">Type recipe names here</string>
+    <string name="lblSelectDay">"Select weekday: "</string>
 </resources>

@@ -6,51 +6,42 @@
     android:orientation="vertical"
     android:padding="10dp">
 
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/lblAddNewRecipe"
+        android:text="@string/lblRecipePlannerHeading"
         android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/etRecipeName"
+    <!--<DatePicker
+        android:id="@+id/datePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:calendarViewShown="false"
+        android:datePickerMode="spinner" />-->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:text="@string/lblSelectDay" />
+
+    <Spinner
+        android:id="@+id/spDays"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <AutoCompleteTextView
+        android:id="@+id/acRecipe"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:autofillHints="Recipe Name"
-        android:background="@drawable/text_box_style"
-        android:hint="@string/lblRecipeName"
-        android:inputType="text" />
-
-    <EditText
-        android:id="@+id/etIngredients"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginBottom="10dp"
-        android:autofillHints="Ingredients"
-        android:background="@drawable/text_box_style"
-        android:gravity="top|start"
-        android:hint="@string/lblIngredients"
-        android:inputType="textMultiLine"
-        android:maxLines="4" />
-
-    <EditText
-        android:id="@+id/etInstructions"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginBottom="10dp"
-        android:autofillHints="Instructions"
-        android:background="@drawable/text_box_style"
-        android:gravity="top|start"
-        android:hint="@string/lblInstructions"
-        android:inputType="textMultiLine"
-        android:maxLines="4" />
+        android:layout_margin="16dp"
+        android:completionThreshold="1"
+        android:hint="@string/lblTypeRecipeName" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="right"
+        android:gravity="end"
         android:orientation="horizontal">
 
         <androidx.appcompat.widget.AppCompatButton

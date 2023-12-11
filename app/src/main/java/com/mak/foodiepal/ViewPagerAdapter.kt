@@ -7,6 +7,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 
 class ViewPagerAdapter(fm: FragmentManager, lc: Lifecycle) : FragmentStateAdapter(fm, lc) {
     //override fun getItemCount() = 3
+
     override fun getItemCount(): Int {
         return 5// Number of tabs
     }
@@ -21,4 +22,15 @@ class ViewPagerAdapter(fm: FragmentManager, lc: Lifecycle) : FragmentStateAdapte
             else -> Fragment()
         }
     }
+
+    /*fun getFragmentAt(position: Int): Fragment {
+        return when (position) {
+            0 -> RecipesFragment()
+            1 -> MealPlannerFragment()
+            2 -> BlogFragment()
+            3 -> ContactFragment()
+            4 -> AboutMeFragment()
+            else -> Fragment()
+        }
+    }*/
 }

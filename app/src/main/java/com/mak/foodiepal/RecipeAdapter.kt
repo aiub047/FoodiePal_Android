@@ -38,8 +38,8 @@ class RecipeAdapter(private val context: Context, private val recipeList: List<R
         val currentItem = recipeList[position]
         holder.tvRecipeName.text = currentItem.recipeName
         holder.tvRecipeName.setTypeface(null, Typeface.BOLD)
-        holder.tvItemInfo.text = currentItem.ingradiants.joinToString("\n")
-        holder.tvItemDesc.text = currentItem.instrcution
+        holder.tvItemInfo.text = currentItem.ingredients.joinToString("\n")
+        holder.tvItemDesc.text = currentItem.instruction
     }
 
     override fun getItemCount(): Int {
